@@ -1,0 +1,23 @@
+#!/bin/sh
+
+##############################################################################
+## Gradle start up script (short form, Unix-like)                           ##
+##############################################################################
+
+# POSIX compliant wrapper script (simplified) for environments where full
+# wrapper script wasn't generated inside this AI environment.
+
+APP_BASE_DIR=$(cd "$(dirname "$0")"; pwd -P)
+APP_HOME="$APP_BASE_DIR"
+
+# Add default JVM opts here if needed
+DEFAULT_JVM_OPTS="-Xmx1024m -Dfile.encoding=UTF-8"
+
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+
+if [ ! -f "$CLASSPATH" ]; then
+  echo "gradle-wrapper.jar not present. Please run 'gradle wrapper' locally to regenerate full wrapper." >&2
+  exit 1
+fi
+
+exec "${JAVA_HOME:-$(/usr/libexec/java_home 2>/dev/null || echo java)}" $DEFAULT_JVM_OPTS -cp "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
